@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %} 
+    <h1>Welcome To Bar's Puzzle Game</h1>
+
+    <h3>The Puzzle:</h3>
+    <p>{{ sequence }}</p>
+    <p>{{ question }}</p>
+
+    <h3>Rules:</h3>
+    <p>Replace the question marks(?) with the correct numbers to create a correct sentance.</p>
+
+    <h2>Type Your Answer Here:</h2>
+
+
+    <form action="/data" method = "POST">
+        <p>Answer: <input type = "text" name = "Answer" /></p>
+        <p><input type = "submit" value = "Submit" /></p>
+    </form>
+{% endblock %}
