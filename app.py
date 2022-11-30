@@ -7,10 +7,12 @@ app = Flask(__name__)
 
 
 sequence = generate_sequence()
+np.random.shuffle(sequence)
 puzzle = generate_puzzle(sequence)
 sol = solution(sequence, puzzle)
 question = generate_question(sol)
 np.random.shuffle(sequence)
+np.random.shuffle(puzzle)
 
 @app.route('/')
 @app.route('/home')
