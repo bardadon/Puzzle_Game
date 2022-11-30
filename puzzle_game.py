@@ -15,7 +15,7 @@ def generate_sequence():
     
     while len(sequence) != 5:
         sequence = np.unique(random.choices(range(100), k = 5)) 
-        np.random.shuffle(sequence)
+    np.random.shuffle(sequence)
     
     return sequence
 
@@ -130,3 +130,13 @@ def check_answer(answer):
                 return False
 
     return True
+
+if __name__ == '__main__':
+
+    sequence = generate_sequence()
+    np.random.shuffle(sequence)
+    puzzle = generate_puzzle(sequence) 
+    sol = solution(sequence, puzzle)
+    question = generate_question(sol)
+
+    print(question)
